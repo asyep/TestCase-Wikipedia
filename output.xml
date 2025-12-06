@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.5 on win32)" generated="2025-12-06T16:34:43.771921" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Wikipedia" source="C:\Kuliah\Semester 4\VERVAL\VerVal_TestCase_Buletan-1\test_wikipedia.robot">
+<test id="s1-t1" name="TC-01 Pencarian Valid (Positif)" line="11">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:34:44.577690" level="INFO">Opening browser 'chrome' to base url 'https://www.wikipedia.org'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-06T16:34:44.577690" elapsed="3.898434"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-06T16:34:48.486180" elapsed="0.266571"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:34:48.755256" level="INFO">Typing text 'Indonesia' into text field 'id=searchInput'.</msg>
+<arg>id=searchInput</arg>
+<arg>Indonesia</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:34:48.753753" elapsed="0.718431"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:34:49.473071" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:34:49.473071" elapsed="5.089998"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Republik Indonesia</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-12-06T16:34:54.565070" elapsed="0.944431"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-06T16:34:55.509501" level="INFO">Test berhasil: Artikel Indonesia ditemukan.</msg>
+<arg>Test berhasil: Artikel Indonesia ditemukan.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-06T16:34:55.509501" elapsed="0.001512"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-06T16:34:55.511013" elapsed="3.806737"/>
+</kw>
+<doc>Memastikan user bisa mencari artikel yang ada.</doc>
+<status status="PASS" start="2025-12-06T16:34:44.576193" elapsed="14.743561"/>
+</test>
+<test id="s1-t2" name="TC-02 Pencarian Tidak Valid (Negatif)" line="20">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:34:59.322762" level="INFO">Opening browser 'chrome' to base url 'https://www.wikipedia.org'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-06T16:34:59.322762" elapsed="4.193078"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-06T16:35:03.517346" elapsed="0.093820"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:35:03.615725" level="INFO">Typing text 'skripsirplkatalontest12345' into text field 'id=searchInput'.</msg>
+<arg>id=searchInput</arg>
+<arg>skripsirplkatalontest12345</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:35:03.612164" elapsed="1.309900"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:35:04.923430" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:35:04.923430" elapsed="0.211525"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Search results</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-12-06T16:35:05.135956" elapsed="3.017935"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-06T16:35:08.154891" level="INFO">Test berhasil: Halaman hasil pencarian muncul.</msg>
+<arg>Test berhasil: Halaman hasil pencarian muncul.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-06T16:35:08.153891" elapsed="0.001000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-06T16:35:08.154891" elapsed="2.295994"/>
+</kw>
+<doc>Memastikan pesan error muncul jika kata kunci asal-asalan.</doc>
+<status status="PASS" start="2025-12-06T16:34:59.321665" elapsed="11.129220"/>
+</test>
+<test id="s1-t3" name="TC-03 Ganti Bahasa (Interwiki)" line="30">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:35:10.453474" level="INFO">Opening browser 'chrome' to base url 'https://id.wikipedia.org/wiki/Indonesia'.</msg>
+<arg>https://id.wikipedia.org/wiki/Indonesia</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-06T16:35:10.452117" elapsed="1.516609"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-06T16:35:11.970006" elapsed="45.848070"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:35:58.207462" level="INFO">Clicking element 'xpath=//li[@id='p-lang-btn']'.</msg>
+<msg time="2025-12-06T16:35:59.026608" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-06T16:35:59.100970" level="FAIL">Element with locator 'xpath=//li[@id='p-lang-btn']' not found.</msg>
+<arg>xpath=//li[@id='p-lang-btn']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-12-06T16:35:58.095344" elapsed="1.536565">Element with locator 'xpath=//li[@id='p-lang-btn']' not found.</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-12-06T16:35:59.636422" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//a[contains(text(),'English')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-12-06T16:35:59.637691" elapsed="0.000000"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Republic of Indonesia</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-12-06T16:35:59.638697" elapsed="0.000000"/>
+</kw>
+<kw name="Location Should Contain" owner="SeleniumLibrary">
+<arg>en.wikipedia.org</arg>
+<doc>Verifies that the current URL contains ``expected``.</doc>
+<status status="NOT RUN" start="2025-12-06T16:35:59.639697" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Test berhasil: Pindah ke Bahasa Inggris.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-12-06T16:35:59.642903" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-06T16:35:59.664019" elapsed="8.347793"/>
+</kw>
+<doc>Memastikan fitur link bahasa berfungsi.</doc>
+<status status="FAIL" start="2025-12-06T16:35:10.452117" elapsed="57.575717">Element with locator 'xpath=//li[@id='p-lang-btn']' not found.</status>
+</test>
+<test id="s1-t4" name="TC-04 Menu Portal Komunitas" line="43">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:08.096159" level="INFO">Opening browser 'chrome' to base url 'https://id.wikipedia.org/wiki/Halaman_Utama'.</msg>
+<arg>https://id.wikipedia.org/wiki/Halaman_Utama</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-06T16:36:08.090636" elapsed="3.264497"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-06T16:36:11.357644" elapsed="0.199264"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:11.560418" level="INFO">Clicking element 'id=vector-main-menu-dropdown'.</msg>
+<arg>id=vector-main-menu-dropdown</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:36:11.559906" elapsed="0.314415"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-06T16:36:12.880581" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-06T16:36:11.875322" elapsed="1.009783"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:12.889106" level="INFO">Clicking element 'xpath=//span[contains(text(),'Portal komunitas')]'.</msg>
+<arg>xpath=//span[contains(text(),'Portal komunitas')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:36:12.888107" elapsed="0.670499"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Portal komunitas</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-12-06T16:36:13.561637" elapsed="0.240338"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-06T16:36:13.804180" level="INFO">Test berhasil: Masuk ke halaman Portal Komunitas.</msg>
+<arg>Test berhasil: Masuk ke halaman Portal Komunitas.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-06T16:36:13.804180" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-06T16:36:13.805181" elapsed="2.755675"/>
+</kw>
+<doc>Memastikan menu navigasi samping berfungsi.</doc>
+<status status="PASS" start="2025-12-06T16:36:08.066519" elapsed="8.495335"/>
+</test>
+<test id="s1-t5" name="TC-05 Validasi Logo (Home Redirect)" line="55">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:16.562855" level="INFO">Opening browser 'chrome' to base url 'https://id.wikipedia.org/wiki/Indonesia'.</msg>
+<arg>https://id.wikipedia.org/wiki/Indonesia</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-06T16:36:16.562855" elapsed="4.950393"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-06T16:36:21.516761" elapsed="2.564562"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:24.082829" level="INFO">Clicking element 'xpath=//a[@class='mw-logo']'.</msg>
+<arg>xpath=//a[@class='mw-logo']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:36:24.082829" elapsed="1.245675"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Selamat datang di Wikipedia</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2025-12-06T16:36:25.329510" elapsed="0.029997"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-06T16:36:25.359507" level="INFO">Test berhasil: Logo mengarahkan ke Home.</msg>
+<arg>Test berhasil: Logo mengarahkan ke Home.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-06T16:36:25.359507" elapsed="0.001506"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-06T16:36:25.361013" elapsed="2.587547"/>
+</kw>
+<doc>Klik logo harus kembali ke halaman utama.</doc>
+<status status="PASS" start="2025-12-06T16:36:16.561854" elapsed="11.386706"/>
+</test>
+<test id="s1-t6" name="TC-06 Fitur Cari Acak (Random Article)" line="63">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:27.951589" level="INFO">Opening browser 'chrome' to base url 'https://id.wikipedia.org/wiki/Halaman_Utama'.</msg>
+<arg>https://id.wikipedia.org/wiki/Halaman_Utama</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-06T16:36:27.951589" elapsed="2.491624"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-06T16:36:30.444693" elapsed="0.142734"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:30.588428" level="INFO">Clicking element 'id=vector-main-menu-dropdown'.</msg>
+<arg>id=vector-main-menu-dropdown</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:36:30.587427" elapsed="0.246014"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-06T16:36:31.835433" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-06T16:36:30.833441" elapsed="1.001992"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:31.835433" level="INFO">Clicking element 'xpath=//span[contains(text(),'Halaman sembarang')]'.</msg>
+<arg>xpath=//span[contains(text(),'Halaman sembarang')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:36:31.835433" elapsed="2.648106"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:34.584983" level="INFO">${judul_awal} = Kohei Gondo - Wikipedia bahasa Indonesia, ensiklopedia bebas</msg>
+<var>${judul_awal}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2025-12-06T16:36:34.485849" elapsed="0.099134"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-06T16:36:34.587065" level="INFO">Judul artikel acak adalah: Kohei Gondo - Wikipedia bahasa Indonesia, ensiklopedia bebas</msg>
+<arg>Judul artikel acak adalah: ${judul_awal}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-06T16:36:34.584983" elapsed="0.002082"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-06T16:36:34.587065" elapsed="2.261370"/>
+</kw>
+<doc>Memastikan fitur artikel sembarang berfungsi.</doc>
+<status status="PASS" start="2025-12-06T16:36:27.949561" elapsed="8.898874"/>
+</test>
+<test id="s1-t7" name="TC-07 Cek Footer Lisensi" line="74">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:36.852044" level="INFO">Opening browser 'chrome' to base url 'https://id.wikipedia.org/wiki/Halaman_Utama'.</msg>
+<arg>https://id.wikipedia.org/wiki/Halaman_Utama</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-06T16:36:36.850701" elapsed="1.934547"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-06T16:36:38.786246" elapsed="1.159262"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//footer</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-12-06T16:36:39.947515" elapsed="0.475278"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:40.511521" level="INFO">Current page contains text 'Creative Commons'.</msg>
+<arg>Creative Commons</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-12-06T16:36:40.432891" elapsed="0.079631"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-06T16:36:40.517522" level="INFO">Test berhasil: Footer lisensi ditemukan.</msg>
+<arg>Test berhasil: Footer lisensi ditemukan.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-06T16:36:40.516521" elapsed="0.001001"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-06T16:36:40.518522" elapsed="2.390658"/>
+</kw>
+<doc>Memastikan teks lisensi hukum ada di bawah.</doc>
+<status status="PASS" start="2025-12-06T16:36:36.850701" elapsed="6.058479"/>
+</test>
+<test id="s1-t8" name="TC-08 Validasi Tombol Sumbangan" line="83">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:42.911748" level="INFO">Opening browser 'chrome' to base url 'https://id.wikipedia.org/wiki/Halaman_Utama'.</msg>
+<arg>https://id.wikipedia.org/wiki/Halaman_Utama</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-06T16:36:42.911748" elapsed="2.316783"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-06T16:36:45.228531" elapsed="0.143360"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:45.374693" level="INFO">Clicking element 'id=vector-main-menu-dropdown'.</msg>
+<arg>id=vector-main-menu-dropdown</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:36:45.374693" elapsed="0.300631"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-12-06T16:36:46.675460" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-12-06T16:36:45.675324" elapsed="1.000136"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:46.676527" level="INFO">Clicking element 'xpath=//span[contains(text(),'Sumbangan')]'.</msg>
+<msg time="2025-12-06T16:36:46.851621" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-12-06T16:36:46.853644" level="FAIL">Element with locator 'xpath=//span[contains(text(),'Sumbangan')]' not found.</msg>
+<arg>xpath=//span[contains(text(),'Sumbangan')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-12-06T16:36:46.675460" elapsed="0.187965">Element with locator 'xpath=//span[contains(text(),'Sumbangan')]' not found.</status>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Dukung Wikipedia</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="NOT RUN" start="2025-12-06T16:36:46.869948" elapsed="0.000000"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>Test berhasil: Masuk ke halaman donasi.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2025-12-06T16:36:46.871088" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-06T16:36:46.873522" elapsed="2.617786"/>
+</kw>
+<doc>Memastikan menu sumbangan bisa diklik.</doc>
+<status status="FAIL" start="2025-12-06T16:36:42.909180" elapsed="6.582128">Element with locator 'xpath=//span[contains(text(),'Sumbangan')]' not found.</status>
+</test>
+<test id="s1-t9" name="TC-09 Tampilan Mobile (Responsive Test)" line="94">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-12-06T16:36:49.496706" level="INFO">${mobile_emulation} = {'deviceName': 'iPhone X'}</msg>
+<var>${mobile_emulation}</var>
+<arg>deviceName=iPhone X</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-12-06T16:36:49.493639" elapsed="0.003067"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-12-06T16:36:49.499773" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002DD95F03950&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-12-06T16:36:49.496706" elapsed="0.004581"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${options}</arg>
+<arg>add_experimental_option</arg>
+<arg>mobileEmulation</arg>
+<arg>${mobile_emulation}</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2025-12-06T16:36:49.501287" elapsed="0.001047"/>
+</kw>
+<kw name="Create Webdriver" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:49.503371" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<arg>Chrome</arg>
+<arg>options=${options}</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<status status="PASS" start="2025-12-06T16:36:49.502334" elapsed="3.624290"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:53.131694" level="INFO">Opening url 'https://id.m.wikipedia.org'</msg>
+<arg>https://id.m.wikipedia.org</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-12-06T16:36:53.130685" elapsed="0.872807"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:54.054904" level="INFO">Current page contains text 'Wikipedia'.</msg>
+<arg>Wikipedia</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-12-06T16:36:54.004688" elapsed="0.051726"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-06T16:36:54.060934" level="INFO">Test berhasil: Web terbuka dalam mode Mobile (iPhone X).</msg>
+<arg>Test berhasil: Web terbuka dalam mode Mobile (iPhone X).</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-06T16:36:54.060934" elapsed="0.000000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-06T16:36:54.063372" elapsed="2.308246"/>
+</kw>
+<doc>Menguji tampilan versi Mobile Web.</doc>
+<status status="PASS" start="2025-12-06T16:36:49.491308" elapsed="6.881522"/>
+</test>
+<test id="s1-t10" name="TC-10 Validasi Input Kosong" line="104">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:56.374980" level="INFO">Opening browser 'chrome' to base url 'https://www.wikipedia.org'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-12-06T16:36:56.373968" elapsed="2.452162"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-12-06T16:36:58.828131" elapsed="0.081311"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:36:58.910975" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>xpath=//button[@type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-12-06T16:36:58.910975" elapsed="1.785576"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2025-12-06T16:37:01.074627" level="INFO">Current page contains text 'Wikipedia'.</msg>
+<arg>Wikipedia</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2025-12-06T16:37:00.699556" elapsed="0.375071"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-12-06T16:37:01.075661" level="INFO">Test berhasil: Input kosong aman.</msg>
+<arg>Test berhasil: Input kosong aman.</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-12-06T16:37:01.074627" elapsed="0.001034"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-12-06T16:37:01.077122" elapsed="2.464333"/>
+</kw>
+<doc>Memastikan search kosong tidak error.</doc>
+<status status="PASS" start="2025-12-06T16:36:56.373968" elapsed="7.167487"/>
+</test>
+<status status="FAIL" start="2025-12-06T16:34:43.774856" elapsed="139.774234"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Test Wikipedia" id="s1" pass="8" fail="2" skip="0">Test Wikipedia</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
